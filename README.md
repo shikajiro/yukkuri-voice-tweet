@@ -11,3 +11,5 @@ tweet.pyを任意の場所で実行してください。
 $ python tweet.py
 
 後は放置してください。勝手に読み上げます。
+
+[サンプル動画](http://www.youtube.com/watch?v=q-gELbojaPk&feature=plcp)
