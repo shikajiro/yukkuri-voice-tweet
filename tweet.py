@@ -8,15 +8,20 @@ import datetime
 from xml.etree import ElementTree
 from tweepy.streaming import StreamListener
 
+<<<<<<< HEAD
 CONSUMER_KEY = "di7fFCE7dMhxg9ii2zZNtg"
 CONSUMER_SECRET = "sWNw6RweHGGKQrmJwB2Fdl0BY2JbgtNP82YPlxk1Ew"
 i = 0
+=======
+CONSUMER_KEY = "***"
+CONSUMER_SECRET = "***"
+>>>>>>> d1bf33838d360969591d32ea75fb55d13b7f90b7
 
 
 def Kanji2Hiragana(message):
     t = re.sub('(?![ぁ-ヶ亜-黑、。！？]).', '', message.encode('utf-8'))
     t = re.sub('\n', '', t)
-    urlbase = "http://jlp.yahooapis.jp/FuriganaService/V1/furigana?appid=74tpjyixg642KBYE45iAsqcgRdfcMEYURUhP7NKdYd6E9zvxBOcUWCgRmAU24iju&grade=1&sentence='{}'"
+    urlbase = "http://jlp.yahooapis.jp/FuriganaService/V1/furigana?appid=***&grade=1&sentence='{}'"
     url = urlbase.format(t)
     xml = urllib2.urlopen(url).read()
     elem = ElementTree.fromstring(xml)
