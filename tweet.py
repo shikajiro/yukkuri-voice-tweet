@@ -4,11 +4,13 @@ import tweepy
 import urllib2
 import re
 import webbrowser
+import datetime
 from xml.etree import ElementTree
 from tweepy.streaming import StreamListener
 
 CONSUMER_KEY = "di7fFCE7dMhxg9ii2zZNtg"
 CONSUMER_SECRET = "sWNw6RweHGGKQrmJwB2Fdl0BY2JbgtNP82YPlxk1Ew"
+i = 0
 
 
 def Kanji2Hiragana(message):
@@ -37,8 +39,8 @@ class AbstractedlyListener(StreamListener):
                 name = u"だれかさん"
             print 'name {}'.format(name.encode('utf-8'))
             print 'text {}'.format(text.encode('utf-8'))
-            os.system('SayKana {}のつぶやき。'.format(name.encode('utf-8')))
-            os.system('SayKana {}'.format(text.encode('utf-8')))
+            os.system('SayKana -o output{}.aiff {}のつぶやき。'.format(datetime.datetime.today().time(), name.encode('utf-8')))
+            os.system('SayKana -o output{}.aiff {}'.format(datetime.datetime.today().time(), text.encode('utf-8')))
 
 key = ''
 secret = ''
